@@ -1,52 +1,48 @@
-#1.
-def convertToRadians(degrees):
-    return(degrees * (3.14/180))
-degrees = 150
-radians = convertToRadians(150)
-print("Degrees:" + str(degrees))
-print("Radians: " + str(radians))
+#3.4
 
-#2.
-student1, student2, student3 = 80.0, 90.0, 66.5
-average = sum((student1,student2,student3))/3
-print("Student scores:\n" + str(student1), str(student2), str(student3))
-print("Average: " + str(average))
+guestList = ['Albert Einstein', 'Elon Musk', 'Arnold Schwarzenegger', 'Kevin Systrom', 'Warren Buffet']
+for person in guestList:
+    print("Dear " + person + ", you are invited to a dinner gathering")
 
-#3.
+#3.5
 
-def calcGroup(numStudents,numGroups):
-    return(numStudents//numGroups)
+print(guestList[0] + " cannot attend the dinner because he's too busy")
+guestList[0] = "Reid Hoffman"
+for person in guestList:
+    print("Dear " + person + ", you are invited to a dinner gathering")
 
-def calcRemainder(numStudents,numGroups):
-    return(numStudents%numGroups)
+#3.6
+print("A bigger dinner table has been found")
+guestList.insert(0,"Mom")
+guestList.insert(int(len(guestList)/2), "Dad")
+guestList.append("Dave Chappelle")
+for person in guestList:
+    print("Dear " + person + ", you are invited to a dinner gathering")
 
-print("Number of students in each group")
-print("Class1: " + str(calcGroup(32,5)))
-print("Class2: " + str(calcGroup(45,7)))
-print("Class3: " + str(calcGroup(51,6)))
 
-print("Number of students leftover:")
-print("Class1: " + str(calcRemainder(32,5)))
-print("Class2: " + str(calcRemainder(45,7)))
-print("Class3: " + str(calcRemainder(51,6)))
+#3.7
+print("Unfortunately, only two people can attend this dinner")
+while len(guestList)>2:
+    print(guestList.pop() + ", Sorry that you can't attend")
+for person in guestList:
+    print("Dear " + person + ", you are welcome to join the dinner")
+del guestList[0:2]
+print(guestList)
 
-#4.
+#3.8
 
-pi = 3.14
-pie_diameter = 55.4
-pie_radius = pie_diameter/2
-circumference = 2 * pi * pie_radius
-circumference_msg = "Jimmy's pie has a circumference"
-print(circumference_msg, circumference)
+locations = ['France', 'Italy', 'San Diego', 'Los Angelos', 'Greece']
+print(locations)
+print(sorted(locations))
+print(locations)
+print(sorted(locations, reverse = True))
+print(locations)
+locations.reverse()
+print(locations)
+locations.reverse()
+print(locations)
+locations.sort()
+print(locations)
+locations.sort(reverse=True)
+print(locations)
 
-#5.
-
-velocity = 343
-frequency = 256
-
-def calcWavelength(v, f):
-    return(v/f)
-
-print("The speed (m/s): ", velocity)
-print("The frequency (Hz): ", frequency)
-print("The wavelenth (m): ", calcWavelength(velocity,frequency))
